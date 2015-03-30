@@ -4,10 +4,10 @@
 // A good reference on HTTP is CURL http://curl.haxx.se/docs/manpage.html
 var AJAX = {
 
-	xhttp  : null,
+	xhttp   : null,
 	// list of pairs as need, all expected to be in the HTTP protocol
 	// SEE: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest
-	header : [{'' : ''}],
+	headers : [{'' : ''}],
 
 	init : function (callback, headers) {
 		// It's not clear this will work, so it's not implemented:
@@ -53,7 +53,7 @@ var AJAX = {
 	POST : function (URL, data) {
 		async = true; // This is explicit for clarity.
 		xhttp.open("POST", URL, true);
-		if ( header.length > 0 ) {
+		if ( this.headers.length > 0 ) {
 			//xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 		}
 		xhttp.send(data);
@@ -64,19 +64,19 @@ var AJAX = {
 	PUT : function (URL, data) {
 		async = true; // This is explicit for clarity.
 		xhttp.open("PUT", URL, true);
-		if ( header.length > 0 ) {
+		if ( this.headers.length > 0 ) {
 			//xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 		}
 		xhttp.send(data);
 	},
 	//
-	DELETE : function (URL, data) {
+	DELETE : function (URL) {
 		async = true; // This is explicit for clarity.
-		xhttp.open("PUT", URL, true);
-		if ( header.length > 0 ) {
+		xhttp.open("DELETE", URL, true);
+		if ( this.headers.length > 0 ) {
 			//xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 		}
-		xhttp.send(data);
+		xhttp.send();
 	},
 */
 }

@@ -27,9 +27,10 @@
 	//
 	function postData() {
 		alert("button POST.");
-		myurl = encodeURI("https://gps-notepad.firebaseio.com/users.json");
-		mydata = '{\'simplelogin:7\' : {\'phone\':\'650-630-1122\'} }';
-
+		myurl = encodeURI("https://gps-notepad.firebaseio.com/users/simplelogin:7.json");
+		mydata = "{'phone':'650-630-1122'}";
+//alert(myurl);
+//alert(mydata);
 		AJAX.init(function(returndata) {
 			document.getElementById('preinfo').innerHTML = JSON.stringify(returndata, null, 4);
 			//document.getElementById('preinfo').innerHTML = 'returndata.length:' + returndata.length;
