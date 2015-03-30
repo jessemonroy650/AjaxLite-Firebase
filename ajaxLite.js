@@ -18,12 +18,16 @@ var AJAX = {
 			xhttp.onreadystatechange = function() {
 				if (xhttp.readyState === 4 && xhttp.status === 200) {
 					callback(xhttp.responseText);
+				} else {
+					alert(xhttp.getAllResponseHeaders());
 				}
 			}
 		} else if (typeof callback == 'string') {
 			xhttp.onreadystatechange = function() {
 				if (xhttp.readyState === 4 && xhttp.status === 200) {
 					document.getElementById(callback).innerHTML = xhttp.responseText;
+				} else {
+					alert(xhttp.getAllResponseHeaders());
 				}
 			}
 		} else {
