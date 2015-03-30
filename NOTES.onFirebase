@@ -1,0 +1,16 @@
+# NOTES #
+Date: 2015-03-29
+
+Google: ''firebase curl example''
+
+''Firebase Quickstart''
+https://www.firebase.com/docs/rest/quickstart.html
+
+''Firebase REST Guide to Saving Data''
+https://www.firebase.com/docs/rest/guide/saving-data.html
+
+Available methods:
+* PUT - Write or replace data
+* PATCH - Update some of the keys without replacing all of the data.
+* POST - add (or append) to a list already on Firebase
+* DELETE - delete a record
