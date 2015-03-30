@@ -19,6 +19,17 @@
 		myurl = encodeURI("https://gps-notepad.firebaseio.com/users.json");
 		AJAX.init(function(returndata) {
 			// Data returned from 'hackerdojo' needed further refinement to look decent. So I opted for the length instead.
+			document.getElementById('preinfo').innerHTML = returndata; // JSON.stringify(returndata, null, 4);
+			//document.getElementById('preinfo').innerHTML = 'returndata.length:' + returndata.length;
+		})
+		AJAX.GET(myurl);
+	}
+	function onButtonClick() {
+		alert("button clicked #2.");
+		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI
+		myurl = encodeURI("https://gps-notepad.firebaseio.com/users.json");
+		AJAX.init(function(returndata) {
+			// Data returned from 'hackerdojo' needed further refinement to look decent. So I opted for the length instead.
 			document.getElementById('preinfo').innerHTML = JSON.stringify(returndata, null, 4);
 			//document.getElementById('preinfo').innerHTML = 'returndata.length:' + returndata.length;
 		})
@@ -44,7 +55,8 @@
 	<button onclick='navigator.app.exitApp()' class="button button-pill button-primary button-large" style="margin:0.1em;float:right;">Exit</button>
 </div>
 
-<button onclick='onButtonClick()' class="button button-pill button-action button-large">button</button>
+<button onclick='onButtonClick()' class="button button-pill button-action button-large">Get Data</button>
+<button onclick='onButtonClick2()' class="button button-pill button-action button-large">Post Data</button>
 <div id=content style="margin:1em;">content</div>
 <pre id=preinfo>preinfo</pre>
 
