@@ -19,6 +19,7 @@ var AJAX = {
 				if (xhttp.readyState === 4 && xhttp.status === 200) {
 					callback(xhttp.responseText);
 				} else {
+					// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest#getAllResponseHeaders%28%29
 					alert(xhttp.getAllResponseHeaders());
 				}
 			}
