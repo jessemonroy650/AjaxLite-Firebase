@@ -20,7 +20,7 @@ var AJAX = {
 					callback(xhttp.responseText);
 				} else {
 					// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest#getAllResponseHeaders%28%29
-					alert(xhttp.getAllResponseHeaders());
+					//alert(xhttp.getAllResponseHeaders());
 				}
 			}
 		} else if (typeof callback == 'string') {
@@ -28,7 +28,7 @@ var AJAX = {
 				if (xhttp.readyState === 4 && xhttp.status === 200) {
 					document.getElementById(callback).innerHTML = xhttp.responseText;
 				} else {
-					alert(xhttp.getAllResponseHeaders());
+					//alert(xhttp.getAllResponseHeaders());
 				}
 			}
 		} else {
@@ -57,9 +57,7 @@ var AJAX = {
 			//xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 		}
 		xhttp.send(data);
-	}
-	/* ONLY POST has been tested */
-/*
+	},
 	//
 	PUT : function (URL, data) {
 		async = true; // This is explicit for clarity.
@@ -69,6 +67,17 @@ var AJAX = {
 		}
 		xhttp.send(data);
 	},
+	//
+	PATCH : function (URL, data) {
+		async = true; // This is explicit for clarity.
+		xhttp.open("PATCH", URL, true);
+		if ( this.headers.length > 0 ) {
+			//xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		}
+		xhttp.send(data);
+	}
+	/* ONLY DELETE has NOT been tested */
+/*
 	//
 	DELETE : function (URL) {
 		async = true; // This is explicit for clarity.

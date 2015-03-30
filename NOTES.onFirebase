@@ -14,3 +14,8 @@ Available methods:
 * PATCH - Update some of the keys without replacing all of the data.
 * PUT - Write or replace data
 * DELETE - delete a record
+
+## Quirks ##
+
+* Firebase requires that when submitting JSON that double-quotes be used.
+  Apparently the JSON standard (http://json.org/).
