@@ -7,7 +7,7 @@ var AJAX = {
 	xhttp  : null,
 	// list of pairs as need, all expected to be in the HTTP protocol
 	// SEE: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest
-	header : [{'name':'', 'value':''}],
+	header : [{'':''}],
 
 	init : function (callback, headers) {
 		// It's not clear this will work, so it's not implemented:
@@ -20,7 +20,6 @@ var AJAX = {
 					callback(xhttp.responseText);
 				} else {
 					// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest#getAllResponseHeaders%28%29
-					//
 					alert(xhttp.getAllResponseHeaders());
 				}
 			}
