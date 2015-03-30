@@ -1,7 +1,8 @@
 // Date: 2013-08-29 - directly from: http://www.w3schools.com/ajax/ajax_xmlhttprequest_create.asp
 // Rewrite: 2015-03-29 - Decide to make this for mobile only. Ignore IE 5 & 6.
-// Decide to do the POST after all. Let's call this version 0.8.
+// 2015-03-30T00:36:08 - Decide to do the POST, PUT, & PATCH after all. Let's call this version 0.8.
 // A good reference on HTTP is CURL http://curl.haxx.se/docs/manpage.html
+// For JSON, see http://json.org/
 var AJAX = {
 
 	xhttp   : null,
@@ -75,9 +76,7 @@ var AJAX = {
 			//xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 		}
 		xhttp.send(data);
-	}
-	/* ONLY DELETE has NOT been tested */
-/*
+	},
 	//
 	DELETE : function (URL) {
 		async = true; // This is explicit for clarity.
@@ -86,6 +85,5 @@ var AJAX = {
 			//xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 		}
 		xhttp.send();
-	},
-*/
+	}
 }

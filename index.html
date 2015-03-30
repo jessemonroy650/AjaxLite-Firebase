@@ -35,6 +35,16 @@
 		})
 		AJAX.PATCH(myurl, mydata);
 	}
+	function deleteData() {
+		//alert("button PATCH.");
+		myurl = encodeURI('https://gps-notepad.firebaseio.com/users/simplelogin:7/phone.json');
+		mydata = '{"phone":"650-630-1122"}';
+		AJAX.init(function(returndata) {
+			document.getElementById('preinfo').innerHTML = JSON.stringify(returndata, null, 4);
+			//document.getElementById('preinfo').innerHTML = 'returndata.length:' + returndata.length;
+		})
+		AJAX.DELETE(myurl);
+	}
 	//
     // Wait for PhoneGap to load
 	document.addEventListener("deviceready", onDeviceReady, false);
@@ -58,6 +68,9 @@
 <button onclick='getData()' class="button button-pill button-action button-large">Get Data</button>
 <p />&nbsp;<p />
 <button onclick='patchData()' class="button button-pill button-action button-large">Patch Data</button>
+<p />&nbsp;<p />
+<button onclick='deleteData()' class="button button-pill button-action button-large">Delete Data</button>
+
 <div id=content style="margin:1em;">content</div>
 <pre id=preinfo>preinfo</pre>
 
